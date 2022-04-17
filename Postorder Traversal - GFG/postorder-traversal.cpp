@@ -124,10 +124,13 @@ struct Node
 
 //Function to return a list containing the postorder traversal of the tree.
 void solve(Node* root, vector<int> &ans ){
+    
     if(root->left)
     solve(root->left, ans) ;
+    
     if(root->right)
     solve(root->right, ans) ;
+    
     ans.push_back(root->data) ;
 
 }

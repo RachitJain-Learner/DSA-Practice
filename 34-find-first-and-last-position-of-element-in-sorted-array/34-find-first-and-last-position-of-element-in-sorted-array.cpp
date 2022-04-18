@@ -38,7 +38,7 @@ public:
     
     vector<int> searchRange(vector<int>& nums, int target) {
         
-        // vector<int> ans(2) ; without declaring vector ans is given***
+        // vector<int> ans(2) ; without declaring vector in code, OUTPUT is given***
         
         if(nums.size() == 0)
             return {-1,-1} ;

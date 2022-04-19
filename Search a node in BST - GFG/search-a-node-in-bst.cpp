@@ -63,5 +63,7 @@ bool search(Node* root, int x) {
         else
             root = root->left ;
     }
-    return root ;
+    if(root == NULL)
+        return 0;
+    else return 1 ;
 }

@@ -20,8 +20,6 @@ class Solution{
             if(sum < 0)
                 sum = 0 ;
         }
-        // if(maxi == 0)
-        // return arr[0] ;
         return maxi ;  
     }
 };

@@ -4,12 +4,12 @@ public:
         
         int n1 = s.size(), n2 = T.size() ;
         stack <char> s1, s2 ;
-        bool check = false ;
         
         for(int i=0 ; i<n1 ; i++){
             
             if(s[i] == '#' && s1.size())
                 s1.pop() ;
+            
             else if(s[i] != '#')
                 s1.push(s[i]);
         }
@@ -18,6 +18,7 @@ public:
             
             if(T[i] == '#' && s2.size())
                 s2.pop() ;
+            
             else if(T[i] != '#')
                 s2.push(T[i]);
         }
@@ -34,7 +35,7 @@ public:
                 else 
                     return false ;
             }
+            return true ;
         }
-        return true ;
     }
 };

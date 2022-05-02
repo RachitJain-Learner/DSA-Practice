@@ -1,44 +1,40 @@
 class Solution {
 public:
-    bool backspaceCompare(string S, string T) {
+    bool backspaceCompare(string s, string T) {
+        
+        int n1 = s.size(), n2 = T.size() ;
+        stack <char> s1, s2 ;
+        bool check = false ;
+        
+        for(int i=0 ; i<n1 ; i++){
             
-         stack <int> s1,s2;
-         string str1,str2; 
+            if(s[i] == '#' && s1.size())
+                s1.pop() ;
+            else if(s[i] != '#')
+                s1.push(s[i]);
+        }
+        
+        for(int i=0 ; i<n2 ; i++){
             
-         for(int i = 0; i < S.size(); i++){
-                 
-                 if(S[i] == '#' && !s1.empty())
-                         s1.pop();
-                 
-                 else if(S[i] != '#')
-                         s1.push(S[i]);
-                 
-         }
-         
-         for(int i = 0; i < T.size(); i++){
-                 
-                 if(T[i] == '#' && !s2.empty())
-                         s2.pop();
-                 
-                 else if(T[i] != '#')
-                         s2.push(T[i]);
-                 
-         }
-            
-         while(!s1.empty()){
-                 
-                 str1.push_back(s1.top());
-                 s1.pop();
-                 
-         }
-            
-         while(!s2.empty()){
-                 
-                 str2.push_back(s2.top());
-                 s2.pop();
-                 
-         }      
-            
-         return str1 == str2;   
+            if(T[i] == '#' && s2.size())
+                s2.pop() ;
+            else if(T[i] != '#')
+                s2.push(T[i]);
+        }
+        
+        if(s1.size() != s2.size())
+            return false ;
+        else{
+            while(s1.size()){
+
+                if(s1.top() == s2.top()){
+                    s1.pop() ;
+                    s2.pop() ;
+                }
+                else 
+                    return false ;
+            }
+        }
+        return true ;
     }
 };

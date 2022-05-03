@@ -18,23 +18,23 @@ class Solution
             
             sum += arr[i] ;
             
-           // if(sum > s){
+            if(sum > s){
             while(sum > s){
                 sum -= arr[j] ;
                 j++ ;
             }
-          //  }
+            }
             if(sum == s){
                 break ;
             }
         }
        
-        if(sum == s){
+        if(sum == s)
             ans = {j+1, i+1} ;
-            return ans ;
-        }
         else 
-        return ans={-1} ;
+            ans = {-1} ;
+            
+        return ans ;
     }
 };
 

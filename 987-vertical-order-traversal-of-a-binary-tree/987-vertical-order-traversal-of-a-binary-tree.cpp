@@ -39,11 +39,11 @@ public:
             if(front->right)
                 topNode.push({front->right, {hd+1, lvl+1}}) ;
         }
-        
         for(auto i:nodes){
             vector<int> res ;
             
-            for(auto j:i.second){
+            for(auto j:i.second)
+            {
                 for(auto k:j.second)
                     res.push_back(k) ;
             }

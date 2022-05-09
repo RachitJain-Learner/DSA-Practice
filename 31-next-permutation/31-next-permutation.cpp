@@ -5,7 +5,7 @@ public:
         while (i >= 0 && nums[i + 1] <= nums[i]) {
             i--;
         }
-        if (i >= 0) {
+        if (i >= 0){
             int j = nums.size() - 1;
             while (nums[j] <= nums[i]) {
                 j--;

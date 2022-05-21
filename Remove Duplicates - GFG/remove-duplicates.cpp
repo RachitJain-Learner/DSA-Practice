@@ -10,10 +10,9 @@ public:
 		
 	string removeDups(string S) 
 	{
-	    string output = "" ;
+	    string output ;
 	    map<char , bool> dups ;
 	    
-	    //for(auto i : S){
 	    for(int i=0 ; i< S.size() ; i++){
 	        if(dups.count(S[i]) == 0){
 	            dups[S[i]] = true ;

@@ -11,11 +11,13 @@ public:
             
             if(pre_sum == 0) res = i+1 ;
             
-            if(l.find(pre_sum) == l.end())
-                l.insert({pre_sum,i}) ;
+            // if(!l.count(pre_sum))
+            //     l.insert({pre_sum,i}) ;
             
-            if(l.find(pre_sum) != l.end())
+            if(l.count(pre_sum))
                 res = max(res , i-l[pre_sum]) ;
+            
+             l.insert({pre_sum,i}) ;
         }
         return res ;
     }

@@ -11,9 +11,6 @@ public:
             
             if(pre_sum == 0) res = i+1 ;
             
-            // if(!l.count(pre_sum))
-            //     l.insert({pre_sum,i}) ;
-            
             if(l.count(pre_sum))
                 res = max(res , i-l[pre_sum]) ;
             

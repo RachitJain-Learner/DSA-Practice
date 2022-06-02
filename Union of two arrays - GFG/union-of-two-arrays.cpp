@@ -11,17 +11,12 @@ class Solution{
     public:
     //Function to return the count of number of elements in union of two arrays.
     int doUnion(int a[], int n, int b[], int m)  {
-        unordered_map<int , int> uni;
-        int count = 0 ;
         
-        for(int i=0 ; i<n ; i++)
-        uni[a[i]]++ ;
-        
+        unordered_set<int> uni(a, a+n);
         for(int i=0 ; i<m ; i++)
-        uni[b[i]]++ ;
+            uni.insert(b[i]) ;
         
         return uni.size() ;
-        
     }
 };
 

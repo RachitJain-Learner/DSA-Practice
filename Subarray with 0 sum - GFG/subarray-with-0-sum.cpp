@@ -19,7 +19,7 @@ class Solution{
         for(int i=0 ; i<n ; i++){
             pre_sum += arr[i] ;
             
-            if(pre_sum == 0 || sum.find(pre_sum) != sum.end())
+            if(pre_sum == 0 || sum.count(pre_sum) )
                 return true ;
                 
             sum.insert(pre_sum) ;

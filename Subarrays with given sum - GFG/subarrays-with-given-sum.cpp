@@ -19,7 +19,7 @@ class Solution
     	    if(pre_sum == sum)
     	        ans++ ;
     	    
-    	    if(s.count(pre_sum - sum))
+    	    if(s.count(pre_sum - sum))      //
     	        ans += s[pre_sum - sum] ;
     	    
     	    s[pre_sum]++ ;

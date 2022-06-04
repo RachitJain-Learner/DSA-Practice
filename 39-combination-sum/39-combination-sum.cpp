@@ -14,7 +14,7 @@ public:
         sum += candidates[i] ;
         temp.push_back(candidates[i]);
         helper(candidates, B, i, sum, temp, ans);    //include
-        sum -= candidates[i] ;
+        sum -= candidates[i] ;                       // backtrack to maintain &temp
         temp.pop_back();
     }
     

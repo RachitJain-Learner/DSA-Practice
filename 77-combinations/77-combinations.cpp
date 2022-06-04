@@ -7,11 +7,12 @@ class Solution {
             ans.pb(subSet) ;
             return ;
         }
-        for(int x= i; x<=n ; ++x){
-            subSet.push_back(x) ;                    // include
-            helper(n , k-1 , x+1 , subSet , ans) ;
-            subSet.pop_back() ;                      // backtrack
-        }
+        if(k > n-i+1) return ;
+        
+        helper(n , k , i+1 , subSet , ans) ;   //exclude 
+        
+        subSet.push_back(i) ;                  //include
+        helper(n , k-1 , i+1 , subSet , ans) ;
     }
     
 public:

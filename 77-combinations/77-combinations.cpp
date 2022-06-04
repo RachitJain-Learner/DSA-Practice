@@ -8,8 +8,7 @@ class Solution {
             return ;
         }
         if(k > n-i+1) return ;
-        if(i>n) return ;
-        
+
         helper(n , k , i+1 , subSet , ans) ;   //exclude 
         
         subSet.push_back(i) ;                  //include

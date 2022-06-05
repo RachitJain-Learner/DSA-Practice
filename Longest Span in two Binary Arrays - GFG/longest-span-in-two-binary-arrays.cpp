@@ -29,9 +29,9 @@ public:
     int longestCommonSum(bool arr1[], bool arr2[], int n) {
         int arr[n];
         for(int i=0 ; i<n ; ++i)
-            arr[i] = arr1[i] - arr2[i] ;
+            arr[i] = arr1[i] - arr2[i] ;   // to create an array containing -1, 1, 0
             
-        return longSubarray_0Sum(arr, n);
+        return longSubarray_0Sum(arr, n);  //longest subarray with 0 sum
     }
 };
 

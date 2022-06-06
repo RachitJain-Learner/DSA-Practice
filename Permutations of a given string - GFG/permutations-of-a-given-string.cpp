@@ -16,7 +16,7 @@ class Solution
         
         for(int i = pos; i<S.length() ; i++){
             if(s.count(S[i]))
-                break ;
+                continue ;
             
             s.insert(S[i]) ;
             swap(S[pos] , S[i]) ;

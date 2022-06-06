@@ -17,8 +17,18 @@ public:
         
         while(tmp1 != tmp2){     // we have to reach same address not same value
             
-            tmp1 = tmp1 == NULL ? headB : tmp1->next;     //either incrementing in same LL or moving to next LL
-            tmp2 = tmp2 == NULL ? headA : tmp2->next;
+            if(tmp1 == NULL){
+				tmp1 = headB;
+			}
+			else{
+				tmp1 = tmp1 -> next;
+			}
+			if(tmp2 == NULL){
+				tmp2 = headA;
+			}
+			else{
+				tmp2 = tmp2 -> next;
+			}
         }
         return tmp1;
     }

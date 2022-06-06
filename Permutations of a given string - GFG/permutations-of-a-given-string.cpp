@@ -5,7 +5,7 @@ using namespace std;
  // } Driver Code Ends
 class Solution
 {   
-    void solve(string S , int pos , vector<string>& ans){
+    void solve(string &S , int pos , vector<string>& ans){
         
         unordered_set<char> s;
         
@@ -13,6 +13,7 @@ class Solution
             ans.push_back(S) ;
             return ;
         }
+        
         for(int i = pos; i<S.length() ; i++){
             if(s.count(S[i]))
                 break ;
@@ -20,6 +21,7 @@ class Solution
             s.insert(S[i]) ;
             swap(S[pos] , S[i]) ;
             solve(S, pos+1, ans) ;
+            swap(S[pos] , S[i]) ;
         }
     }
 	public:
@@ -29,6 +31,7 @@ class Solution
 		    int i = 0 ;
 		    solve(S , i , ans);
 		    sort(ans.begin() , ans.end()) ;
+		    
 		    return ans ;
 		}
 };

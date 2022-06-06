@@ -17,18 +17,8 @@ public:
         
         while(tmp1 != tmp2){     // we have to reach same address not same value
             
-            if(tmp1 == NULL){
-				tmp1 = headB;
-			}
-			else{
-				tmp1 = tmp1 -> next;
-			}
-			if(tmp2 == NULL){
-				tmp2 = headA;
-			}
-			else{
-				tmp2 = tmp2 -> next;
-			}
+            tmp1 = tmp1 == NULL ? headB : tmp1->next; ;
+            tmp2 = tmp2 == NULL ? headA : tmp2->next; ;
         }
         return tmp1;
     }

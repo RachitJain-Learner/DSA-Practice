@@ -9,23 +9,17 @@
 class Solution {
 public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
-        if(headA == NULL || headB == NULL)
-            return NULL ;
         
-        ListNode *l1 = headA ;
-        ListNode *l2 = headB ;
-        int c1 = 0 , c2 = 0 ;
-        bool a = false ;
+        ListNode *tmp1 = headA;
+        ListNode *tmp2 = headB;
         
-        while(l1 != NULL){
-            l2 = headB ;
-            while(l2 != NULL){
-                if(l1 == l2)
-                    return l1 ;
-                l2 = l2->next ;
-            }
-            l1 = l1->next ;
+        //add both linked list (See side notes)
+        
+        while(tmp1 != tmp2){     // we have to reach same address not same value
+            
+            tmp1 = tmp1 == NULL ? headB : tmp1->next;     //either incrementing in same LL or moving to next LL
+            tmp2 = tmp2 == NULL ? headA : tmp2->next;
         }
-        return NULL ;
+        return tmp1;
     }
 };

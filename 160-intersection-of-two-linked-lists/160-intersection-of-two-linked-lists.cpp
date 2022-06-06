@@ -12,8 +12,7 @@ public:
         
         ListNode *tmp1 = headA;
         ListNode *tmp2 = headB;
-        
-        //add both linked list (See side notes)
+        // Approach is to join both linked lists (See side notes)
         
         while(tmp1 != tmp2){     // we have to reach same address not same value
             

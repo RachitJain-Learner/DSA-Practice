@@ -6,9 +6,9 @@ public:
     
     void combinationSumHelper(int k, int n, int sum, vector<int>& combination, int num){
         
-        // if(sum > n) return ;
-        if(k == 0){
-            if(sum == n){
+        if(k < 0) return ;
+        if(sum == n){
+            if(k == 0){
                 ansArr.push_back(combination);
             }
             return;

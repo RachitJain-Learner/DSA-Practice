@@ -13,12 +13,12 @@ class Solution
             ans.push_back(S) ;
             return ;
         }
-        
         for(int i = pos; i<S.length() ; i++){
             if(s.count(S[i]))
-                continue ;
+                break ;
             
             s.insert(S[i]) ;
+            
             swap(S[pos] , S[i]) ;
             solve(S, pos+1, ans) ;
             swap(S[pos] , S[i]) ;

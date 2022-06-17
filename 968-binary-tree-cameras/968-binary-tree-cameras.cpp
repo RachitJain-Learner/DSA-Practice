@@ -10,30 +10,23 @@
  * };
  */
 class Solution {
-    int numOfCameras = 0;
+   public:
+    int res = 0;
     
-    // -1: NOT MONITORED
-    //  0: MONITORED
-    //  1: HAS CAMERA
-    
-    int dfs(TreeNode* root) {
-        if (root == NULL) return 0;
-        
-        int left = dfs(root->left);
-        int right = dfs(root->right);
-        
-        if (left == -1 || right == -1) {     
-            numOfCameras++;
-            return 1; 
-        }
-        
-        if (left == 1 || right == 1)
-            return 0; 
-        
-        return -1;
+    int minCameraCover(TreeNode* root) 
+    {
+        return (dfs(root) < 1 ? 1 : 0) + res;
     }
-public:
-    int minCameraCover(TreeNode* root) {
-        return dfs(root) == -1 ? numOfCameras + 1 : numOfCameras;
+
+    int dfs(TreeNode* root) 
+    {
+        if (!root) return 2;
+        int left = dfs(root->left), right = dfs(root->right);
+        if (left == 0 || right == 0) 
+        {
+            res++;
+            return 1;
+        }
+        return left == 1 || right == 1 ? 2 : 0;
     }
 };

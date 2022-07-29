@@ -19,7 +19,7 @@ public:
         
         while(fast != NULL && fast->next != NULL){
             slow = slow -> next ;
-            fast = fast->next->next ;
+            fast = fast->next->next ;         //to compensate the cond we have used and operation in while loop
         }
         return slow ;
     }

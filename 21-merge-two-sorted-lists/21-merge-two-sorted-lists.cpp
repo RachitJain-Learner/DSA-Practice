@@ -15,7 +15,7 @@ class Solution {
         ListNode* curr2 = list2 ;
         
         ListNode* next1 = curr1->next ;
-        ListNode* next2 = curr2->next ;
+        ListNode* next2  ;
         
         if(next1 == NULL){
             curr1->next = curr2 ;

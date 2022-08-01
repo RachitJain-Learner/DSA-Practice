@@ -18,7 +18,8 @@ class Solution {
         ListNode* next2 = curr2->next ;
         
         if(next1 == NULL){
-        curr1->next = curr2 ;
+            curr1->next = curr2 ;
+            return list1 ;
         }
         while(next1 != NULL && curr2 != NULL){
             

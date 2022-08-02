@@ -25,6 +25,6 @@ public:
             curr = temp ;
         }
         
-        return head = prv;
+        return prv;
     }
 };

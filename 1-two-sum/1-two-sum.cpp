@@ -9,7 +9,7 @@ public:
             int s = target - nums[i] ;
             
             if(mp.find(s) != mp.end()){
-                ans = {i , mp[s]} ;
+                return ans = {i , mp[s]} ;
             }
             mp[nums[i]] = i ;
         }

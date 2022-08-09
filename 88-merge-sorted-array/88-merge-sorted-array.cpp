@@ -8,14 +8,13 @@ public:
         while(j >= 0){
             
             if(i == -1 || nums1[i] < nums2[j]){  //why i==-1-->in notes section
-                nums1[l] = nums2[j]; 
+                nums1[l--] = nums2[j]; 
                 j-- ;
             }
             else{
-                nums1[l] = nums1[i];
+                nums1[l--] = nums1[i];
                  i-- ;
             } 
-            l-- ;
         }
     }
 };

@@ -5,9 +5,9 @@ public:
         int j = n-1 ;
         int l = m + n - 1 ;
         
-        while(l >= 0 && j >= 0){
+        while(j >= 0){
             
-            if(i == -1 || nums1[i] < nums2[j]){  //why i==-1 
+            if(i == -1 || nums1[i] < nums2[j]){  //why i==-1-->in notes section
                 nums1[l] = nums2[j]; 
                 j-- ;
             }

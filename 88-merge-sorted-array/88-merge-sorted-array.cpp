@@ -7,7 +7,7 @@ public:
         
         while(l >= 0 && j >= 0){
             
-            if(i == -1 || nums1[i] < nums2[j]){
+            if(i == -1 || nums1[i] < nums2[j]){  //why i==-1 
                 nums1[l] = nums2[j]; 
                 j-- ;
             }
@@ -19,11 +19,3 @@ public:
         }
     }
 };
-
-
-// ublic void merge(int[] A, int m, int[] B, int n) {
-// 	for (int l = m+n-1, a = m-1, b = n-1; l>=0 && b>=0; l--) {
-// 		if (a >= 0 && A[a] > B[b]) A[l] = A[a--]; 
-// 		else A[l] = B[b--];
-// 	}        
-// }

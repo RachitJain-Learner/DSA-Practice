@@ -12,10 +12,8 @@
 class Solution {
 public:
     vector<int> rightSideView(TreeNode* root) {
+        
         vector<int> ans ;
-        
-        if(!root) return ans ;
-        
         solve(root, 0, ans) ;
         return ans ;
     }
@@ -28,6 +26,5 @@ public:
         
         solve(root->right, lvl+1, ans) ;
         solve(root->left, lvl+1, ans) ;
-        
     }
 };

@@ -10,16 +10,17 @@
  * };
  */
 class Solution {
+    
+public:
+    bool isSymmetric(TreeNode* root){ 
+        return check(root->left, root->right) ; 
+    }
+    
     bool check(TreeNode* p, TreeNode* q){
         if(p == NULL || q == NULL)
             return p == q ;
         
-        return (p->val == q->val) && check(p->left,q->right) && check(p->right, q->left) ;
-        
-    }
-public:
-    bool isSymmetric(TreeNode* root) {
-            
-        return check(root->left, root->right) ; 
+        return (p->val == q->val) 
+            && check(p->left, q->right) && check(p->right, q->left) ;
     }
 };

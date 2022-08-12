@@ -1,7 +1,6 @@
 class Solution {
 public:
     int solve(vector<int>& cost, int n){
-        
         int prev2 = cost[0] ;
         int prev1 = cost[1] ;
         int tmp = 0 ;

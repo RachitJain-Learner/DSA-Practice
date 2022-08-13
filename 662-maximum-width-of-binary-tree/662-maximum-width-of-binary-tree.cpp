@@ -19,8 +19,8 @@ public:
         nodes.push({root, 0}) ;
         
         while(!nodes.empty()){
-            int id = nodes.front().second ; 
             int size = nodes.size() ;
+            int id = nodes.front().second ; 
             int first, last ;
             
             for(int i=0 ; i<size ; ++i){

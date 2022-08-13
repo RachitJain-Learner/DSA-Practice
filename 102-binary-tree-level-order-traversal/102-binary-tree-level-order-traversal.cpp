@@ -24,7 +24,7 @@ public:
             vector<int> lvl ;
             
             for(int i=0 ; i<size ; i++){
-                auto temp = q.front() ;
+                auto temp = q.front() ;   //auto or TreeNode*
                 q.pop() ;
            
                 lvl.push_back(temp->val) ;

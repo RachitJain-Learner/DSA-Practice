@@ -24,14 +24,12 @@ class Solution {
     }
 public:
     int countNodes(TreeNode* root) {
-        if(root == NULL)
-            return 0 ;
         
-        int leftH = heightLeft(root->left) ; 
-        int rightH = heightRight(root->right) ;
+        int leftH = heightLeft(root) ; 
+        int rightH = heightRight(root) ;
         
         if(leftH == rightH)
-            return pow(2, leftH+1) - 1 ;
+            return (1<<leftH) - 1 ;
         
         return 1 + countNodes(root->left) + countNodes(root->right) ;
     }

@@ -11,16 +11,16 @@
  */
 class Solution {
     int heightLeft(TreeNode* root){
-        if(!root) return 0 ;
         
+        if(!root) return 0 ;
         return 1 + heightLeft(root->left) ; ;
     }
     int heightRight(TreeNode* root){
         
         if(!root) return 0 ;
-        
         return 1 + heightRight(root->right) ;
     }
+    
 public:
     int countNodes(TreeNode* root) {
         if(!root) return 0 ;    //this time no use

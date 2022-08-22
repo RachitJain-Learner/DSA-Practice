@@ -11,19 +11,15 @@
 class Solution {
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-        if(root == NULL)
-            return NULL ;
-        
-        while(true){
+                                            // no need to write case of root == NULL
+        while(true){                        //since given that p and q exist in BST
             int curr = root->val ;
             
             if(curr > p->val && curr > q->val){
-                if(root->left)
-                    root = root->left ;
-            }
+                root = root->left ;              // if(root->left) cond is not required since
+            }                                        //  given that both p and q exist in BST
             else if(curr < p->val && curr < q->val){
-                if(root->right)
-                    root = root->right ;
+                root = root->right ;                   // if(root->right) same reason
             }
             else
                 break ;

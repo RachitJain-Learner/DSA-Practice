@@ -16,8 +16,9 @@ public:
             int curr = root->val ;
             
             if(curr > p->val && curr > q->val){
-                root = root->left ;              // if(root->left) cond is not required since
-            }                                        //  given that both p and q exist in BST
+                root = root->left ;              // if(root->left) the traverse cond is not 
+            }                           //required since given that both p and q exist in BST 
+            
             else if(curr < p->val && curr < q->val){
                 root = root->right ;                   // if(root->right) same reason
             }

@@ -1,23 +1,27 @@
 class Solution {
-public:
+public:  
+           // Tabulation
     int rob(vector<int>& nums) {
         
-        int n = nums.size() ;
+        return solve(nums) ;
+    }
+    int solve(vector<int>& nums){
         
+        int n = nums.size() ;
         vector<int> dp(n, -1) ;
         
-        return solve(n-1, nums, dp) ;
-    }
-    int solve(int ind, vector<int>& nums, vector<int>& dp){
+        dp[0] = nums[0] ;
+        int neg = 0 ;
         
-        if(ind == 0) return nums[0] ;
-        if(ind < 0) return 0 ;
-        
-        if(dp[ind] != -1) return dp[ind] ;
-        
-        int pick = nums[ind] + solve(ind-2, nums, dp) ;
-        int notpick = solve(ind-1, nums, dp) ;
-        
-        return dp[ind] = max(pick, notpick) ;
+        for(int i = 1; i<n ; i++){
+            
+            int pick = nums[i] ; 
+            if(i>1) pick += dp[i-2] ; 
+            
+            int notpick = dp[i-1] ; 
+
+            dp[i] = max(pick, notpick) ;
+        }
+        return dp[n-1] ;
     }
 };

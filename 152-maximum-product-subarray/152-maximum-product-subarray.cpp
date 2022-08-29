@@ -11,7 +11,7 @@ public:
             prodfromStart *= nums[i] ;
             prodfromEnd *= nums[n-1-i] ;
             
-            ans = max(ans, max(prodfromEnd, prodfromStart)) ;
+            ans = max({prodfromStart, prodfromEnd, ans}) ;
             
             if(prodfromStart == 0)
                 prodfromStart = 1 ;

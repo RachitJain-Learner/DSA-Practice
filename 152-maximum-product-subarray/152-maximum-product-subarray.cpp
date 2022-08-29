@@ -2,16 +2,16 @@ class Solution {
 public:
     int maxProduct(vector<int>& nums) {
 	    int n = nums.size() ;
-        int ans = nums[0], prodfromStart = 1, prodfromEnd = 1 ;
+        int ans = nums[0], prodfromleft = 1, prodfromRight = 1 ;
         
         for(int i = 0; i<n ; i++){
-            prodfromStart *= nums[i] ;
-            prodfromEnd *= nums[n-1-i] ;
+            prodfromleft *= nums[i] ;
+            prodfromRight *= nums[n-1-i] ;
             
-            ans = max({prodfromStart, prodfromEnd, ans}) ;
+            ans = max({prodfromleft, prodfromRight, ans}) ;
             
-            if(prodfromStart == 0) prodfromStart = 1 ;
-            if(prodfromEnd == 0) prodfromEnd = 1 ;
+            if(prodfromleft == 0) prodfromleft = 1 ;
+            if(prodfromRight == 0) prodfromRight = 1 ;
         }
         return ans ;
     }

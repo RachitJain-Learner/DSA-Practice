@@ -11,7 +11,7 @@
 class Solution {
     ListNode* middle(ListNode* head){
         ListNode* slow = head ;
-        ListNode* fast = head->next;
+        ListNode* fast = head->next;    //for 1st middle node in even nodes
         
         while(fast && fast->next ){
             slow = slow->next ;

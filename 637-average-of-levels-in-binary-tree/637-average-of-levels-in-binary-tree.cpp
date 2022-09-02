@@ -29,7 +29,7 @@ public:
                 if(node->right) q.push(node->right) ;
                 avg += node->val ;
             }
-            ans.push_back(avg/size) ;
+            ans.push_back((double)avg/size) ;
         }
         return ans ;
     }

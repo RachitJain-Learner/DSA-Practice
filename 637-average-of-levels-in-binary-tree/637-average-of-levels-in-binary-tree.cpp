@@ -22,7 +22,7 @@ public:
             double avg = 0 ;
         
             for(int i=0; i<size; i++){
-                auto node = q.front() ;
+                TreeNode* node = q.front() ;
                 q.pop() ;
                 
                 if(node->left) q.push(node->left) ;

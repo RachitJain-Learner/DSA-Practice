@@ -17,7 +17,6 @@ public:
         
         q.push(root) ;
         
-        
         while(!q.empty()){
             int size = q.size() ;
             double avg = 0 ;

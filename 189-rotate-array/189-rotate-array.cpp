@@ -1,6 +1,6 @@
 class Solution {
 private:
-    void revers(vector<int>& nums, int l, int r){
+    void reverse(vector<int>& nums, int l, int r){
         while(l < r){
             int t = nums[l] ; 
             nums[l] = nums[r] ;
@@ -15,11 +15,11 @@ public:
         int n = nums.size() ;
         k = k % n ;
         
-        revers(nums, 0, n-k-1) ;
+        reverse(nums, 0, n-k-1) ;
         
-        revers(nums, n-k, n-1) ;
+        reverse(nums, n-k, n-1) ;
         
-        revers(nums, 0, n-1) ;
+        reverse(nums, 0, n-1) ;
         
     }
 };

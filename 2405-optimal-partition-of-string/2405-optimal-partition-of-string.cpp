@@ -6,14 +6,11 @@ public:
         int ct = 1 ;
         for(int i=0 ; i<s.length() ; ++i){
             
-            if(t.find(s[i]) == t.end())
-                t.insert(s[i]);
-            
-            else{
+            if(t.find(s[i]) != t.end()) {
                 ct++ ;
                 t.clear();
-                t.insert(s[i]) ;
             }
+            t.insert(s[i]) ;
         }
         return ct ;
     }

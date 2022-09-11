@@ -11,10 +11,10 @@ public:
                t.insert(s[i]);
             }
             else{
-               
-                ct++ ;
                 t.clear();
                 t.insert(s[i]) ;
+                ct++ ;
+                
             }
         }
         

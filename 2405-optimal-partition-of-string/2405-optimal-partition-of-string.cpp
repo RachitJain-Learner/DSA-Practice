@@ -2,7 +2,7 @@ class Solution {
 public:
 
     int partitionString(string s) {
-        unordered_set<char> t ;
+        unordered_set<int> t ;
         int ct = 1 ;
         for(int i=0 ; i<s.length() ; ++i){
             

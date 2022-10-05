@@ -10,17 +10,10 @@
  * };
  */
 class Solution {
-    bool helper(TreeNode* root, int sum, int targetSum){
-        if (root == NULL) return false ;
-        
-        sum += root->val ;
-        if (sum == targetSum && root->left ==  NULL && root->right == NULL) return true;
-        
-        return helper(root->left, sum, targetSum) || helper(root->right, sum, targetSum) ;
-
-    }
 public:
     bool hasPathSum(TreeNode* root, int targetSum) {
-        return helper(root, 0, targetSum) ;
+        if (root == NULL) return false ;
+        if (targetSum == root->val && root->left ==  NULL && root->right == NULL) return true;
+        return hasPathSum(root->left, targetSum - root->val) || hasPathSum(root->right, targetSum - root->val) ;
     }
 };

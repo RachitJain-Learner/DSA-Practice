@@ -2,12 +2,11 @@ class Solution {
 private:
     void dfs(int sr, int sc, vector<vector<int>>& image, vector<vector<int>>& copy, int start, int color, int drow[], int dcol[]){
         copy[sr][sc] = color ;
-        int m = image.size() ;
-        int n = image[0].size() ;
+
         for(int i= 0 ; i < 4 ; ++i){
             int nrow = sr + drow[i] ;
             int ncol = sc + dcol[i] ;
-            if(nrow >= 0 && nrow < m  && ncol >= 0 && ncol < n && image[nrow][ncol] == start && 
+            if(nrow >= 0 && nrow < image.size()  && ncol >= 0 && ncol < image[0].size() && image[nrow][ncol] == start && 
                copy[nrow][ncol] != color){
                 dfs(nrow, ncol, image, copy, start, color, drow, dcol);
             }

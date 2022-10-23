@@ -41,15 +41,14 @@ class Solution
         while(temp -> next){
             ct++ ;
             if(ct == k){
-                last = temp ;
                 newHead = temp -> next ;
+                temp -> next = NULL ;
+                temp = newHead ;
             }
-            temp = temp -> next ;
+            else temp = temp -> next ;
         }
         if(ct < k) return head ;
-        last -> next = NULL ;
         temp -> next = head ;
-        
         return newHead ;
     }
 };

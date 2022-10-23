@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
   public:
-    void dfsHelper(int src, int vis[], vector<int> adj[], vector<int> &ans){
+    void dfsHelper(int src, int *vis, vector<int> *adj, vector<int> &ans){
         vis[src] = 1 ;
         ans.push_back(src) ;
         for(auto it: adj[src]){

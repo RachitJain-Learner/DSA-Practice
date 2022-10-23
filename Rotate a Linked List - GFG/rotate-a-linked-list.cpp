@@ -35,7 +35,6 @@ class Solution
     {
         Node *temp = head ;
         Node *newHead = NULL ;
-        Node *last = NULL ;
         int ct = 0 ;
         
         while(temp -> next){

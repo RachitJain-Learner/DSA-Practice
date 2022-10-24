@@ -15,16 +15,16 @@ class Solution
     vector <int> max_of_subarrays(int *arr, int n, int k)
     {
         vector <int> ans ;
-        deque<int> temp ;
+        deque<int> dq ;
         
         for(int i=0 ; i<n ; i++){
-        if(!temp.empty() && temp.front() == i-k) temp.pop_front() ;
+        if(!dq.empty() && dq.front() == i-k) dq.pop_front() ;
         
-        while(!temp.empty() && arr[temp.back()] < arr[i]) temp.pop_back() ;
+        while(!dq.empty() && arr[dq.back()] < arr[i]) dq.pop_back() ;
         
-        temp.push_back(i) ;
+        dq.push_back(i) ;
         
-        if(i >= k-1) ans.push_back(arr[temp.front()]) ;
+        if(i >= k-1) ans.push_back(arr[dq.front()]) ;
         }
         return ans ;
     }

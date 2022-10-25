@@ -21,7 +21,7 @@ string firstRepChar(string s)
     unordered_set<int> st ;
     
     for(int i=0 ; i<s.size() ; i++){
-        if(st.find(s[i]) != st.end())
+        if(st.count(s[i]))
             return {s[i]} ;
         st.insert(s[i]) ;
     }

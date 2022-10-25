@@ -6,7 +6,6 @@ public:
         for(auto i : word1 ) s1 += i ;
         for(auto j : word2 ) s2 += j ;
         
-        if(s1 == s2) return true ;
-        else return false ;
+        return (s1 == s2) ;
     }
 };

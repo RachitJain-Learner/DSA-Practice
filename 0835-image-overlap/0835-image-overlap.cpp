@@ -12,13 +12,13 @@ public:
             if (B[i / N][i % N] == 1)
                 LB.push_back(i / N * 100 + i % N);
         }
-        
         int res = 0;
-        for (int i : LA) 
+        for (int i : LA) {
             for (int j : LB) {
                 count[i - j]++;
                 res = max(res, count[i - j]);
             }
-        return res;   
+        }
+        return res ;   
     }
 };

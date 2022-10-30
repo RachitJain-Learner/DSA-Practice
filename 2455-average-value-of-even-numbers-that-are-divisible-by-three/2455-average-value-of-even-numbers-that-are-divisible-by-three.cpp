@@ -8,6 +8,7 @@ public:
                 ct ++ ;
             }    
         }
-        return (ct == 0) ? 0 : sum/ct ;  
+        if(ct == 0) return 0 ;
+        return sum/ct ;   
     }
 };

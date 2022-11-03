@@ -1,1 +1,1 @@
-​
+// if(mp[tmp] > 0){ --> this is wrong since it will set temp with 0 value

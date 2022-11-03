@@ -15,18 +15,19 @@ public:
             reverse(tmp.begin(), tmp.end()) ;
             
             if(s == tmp){
-                ans += it.second/2 ;
-                if(it.second % 2) flag = 1 ;
+                ans += mp[s] / 2 ;
+                if(mp[s] % 2) flag = 1 ;
             }
-            else{
+            else{                                         //notes --->
                 if(mp.count(tmp)){
-                    ans += min(it.second, mp[tmp]), mp.erase(tmp) ;
+                    ans += min(mp[s], mp[tmp]) ;
+                    mp.erase(tmp) ;
                 }
             }
         }
         ans = ans * 4 ;
         
-        if(flag ) ans += 2 ;
+        if(flag == 1) ans += 2 ;
         
         return ans ;
     }

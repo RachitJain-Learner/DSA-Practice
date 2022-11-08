@@ -17,8 +17,7 @@ class Solution{
         priority_queue<int, vector<int>, greater<int>> temp(arr + l, arr + r + 1) ;
         int ans = 0 ;
         while(k--){
-            ans = temp.top() ;
-            
+            if(k == 0) ans = temp.top() ;
             temp.pop() ;
         }
         return ans ;

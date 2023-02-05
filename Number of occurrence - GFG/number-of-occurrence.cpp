@@ -9,23 +9,17 @@ using namespace std;
 //User function template for C++
 class Solution{
 public:
-    void solve(int arr[], int n, int x, int &ans){
-        if(n < 0)
-	        return ;
-	        
-	    if(arr[n] == x)
-            ans += 1 ;
-            
-        solve(arr, n-1, x, ans) ;
-    }
-	/* if x is present in arr[] then returns the count
+   /* if x is present in arr[] then returns the count
 		of occurrences of x, otherwise returns 0. */
 	int count(int arr[], int n, int x) {
 	    
-	    int ans = 0 ;
-	    solve(arr, n-1, x, ans) ;
-	    
-	    return ans ;
+	    if(n < 0)
+	        return 0 ;
+	        
+	    if(arr[n-1] == x)
+            return 1 + count(arr, n-1, x) ;
+            
+        return count(arr, n-1, x);
 	}
 };
 

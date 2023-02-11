@@ -7,19 +7,14 @@ using namespace std;
 class Solution{
 public:
 	int rowWithMax1s(vector<vector<int> > arr, int n, int m) {
-	    int i, j, flag ;
+	    int i, j ;
 	    
-	    for(i = 0 ; i<m ; ++i){
-	        for(j=0 ; j<n ; j++){
-	            if(arr[j][i] == 1){
-	                flag = 1 ;
-	                break ;
-	            }
-	        }
-	        if(flag) break ;
-	    }
-	    
-	    return (j == n) ? -1: j ;
+	    for(i = 0 ; i<m ; ++i)
+	        for(j = 0 ; j<n ; j++)
+	            if(arr[j][i] == 1)
+	                return j ;
+	                
+	    return -1 ;
 	}
 };
 

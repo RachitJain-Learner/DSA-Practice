@@ -17,7 +17,7 @@ public:
 	            secondLargest = largest ;
 	            largest = arr[i] ;
 	        }
-	        else if(secondLargest < arr[i] && arr[i] < largest)
+	        else if(secondLargest < arr[i] && arr[i] != largest)
 	            secondLargest = arr[i] ;
 	    }
 	    return secondLargest ;

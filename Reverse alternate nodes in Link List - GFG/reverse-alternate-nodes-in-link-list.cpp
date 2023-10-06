@@ -78,7 +78,7 @@ class Solution
     Node* reverseLL(Node *temp){
         Node *prev = NULL, *next ;
         Node *curr = temp ;
-        while(curr ){
+        while(curr){
             next = curr->next ;
             curr->next = prev ;
             prev = curr ;
@@ -96,6 +96,7 @@ class Solution
         Node *curr = head->next ;
         Node *dummy = head->next ;
         
+        // 1. Making altenate connections
         while(prev->next && curr->next){
             prev->next = curr->next ;
             prev = prev->next ;
@@ -104,9 +105,10 @@ class Solution
             if(curr->next)
                 curr = curr->next ;
         }
-        
+        // 2. Reverse the LL
         Node *temp = reverseLL(dummy) ;
         
+        // 3. Join reverse LL
         prev->next = temp ;
     }
 };
